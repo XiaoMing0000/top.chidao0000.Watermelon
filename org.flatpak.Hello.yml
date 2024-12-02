@@ -1,0 +1,31 @@
+id: org.flatpak.Hello
+runtime: org.freedesktop.Platform
+runtime-version: '23.08'
+sdk: org.freedesktop.Sdk
+command: hello
+modules:
+  - name: hello
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 hello.sh /app/bin/hello
+      - install -Dm644 org.flatpak.Hello.png /app/share/icons/hicolor/512x512/apps/org.flatpak.Hello.png
+      - install -Dm644 org.flatpak.Hello.desktop /app/share/applications/org.flatpak.Hello.desktop
+
+    sources:
+      - type: script
+        dest-filename: hello.sh
+        commands: 
+          - echo "Hello world, from a sandbox"
+
+      - type: file
+        path: org.flatpak.Hello.png
+
+      - type: file
+        path: org.flatpak.Hello.desktop
+
+metadata:
+  name: "Hello app"
+  generic-name: "Demo Hello Application"
+  comment: "A simple Flatpak application"
+  categories: "Utility;Development;"
+  icon: "org.flatpak.Hello"

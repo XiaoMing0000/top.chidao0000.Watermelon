@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Name=Hello App
+GenericName=Demo Hello Application
+Comment=A simple Flatpak demo app
+Exec=hello
+Icon=org.flatpak.Hello
+Terminal=true
+Type=Application
+Categories=Utility;Development;
+
