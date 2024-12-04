@@ -1,10 +1,10 @@
 [Desktop Entry]
 Version=1.0
-Name=Hello App
+Name=Watermelon
 GenericName=Demo Hello Application
 Comment=A simple Flatpak demo app
-Exec=hello %U
-Icon=org.flatpak.Hello
+Exec=watermelon %U
+Icon=top.chidao0000.Watermelon
 Terminal=false
 Type=Application
 Categories=Utility;Development;

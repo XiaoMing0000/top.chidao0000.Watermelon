@@ -1,6 +1,6 @@
 # 构建命令
 ```sh
-flatpak-builder --force-clean --user  --repo=repo --install builddir org.flatpak.Hello.yml
+flatpak-builder --force-clean --user  --repo=repo --install builddir top.chidao0000.Watermelon.yml
 ```
 
 
