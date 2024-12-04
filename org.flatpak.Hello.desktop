@@ -3,9 +3,9 @@ Version=1.0
 Name=Hello App
 GenericName=Demo Hello Application
 Comment=A simple Flatpak demo app
-Exec=flatpak run org.flatpak.Hello
+Exec=hello %U
 Icon=org.flatpak.Hello
-Terminal=true
+Terminal=false
 Type=Application
 Categories=Utility;Development;
-
+MimeType=application/sql;
