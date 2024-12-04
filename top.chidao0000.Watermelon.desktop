@@ -1,7 +1,7 @@
 [Desktop Entry]
 Version=1.0
 Name=Watermelon
-GenericName=Demo Hello Application
+GenericName=Demo Watermelon Application
 Comment=A simple Flatpak demo app
 Exec=watermelon %U
 Icon=top.chidao0000.Watermelon
