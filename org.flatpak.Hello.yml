@@ -11,15 +11,16 @@ modules:
       - install -Dm 644 org.flatpak.Hello.png /app/share/icons/hicolor/512x512/apps/org.flatpak.Hello.png
       - install -Dm 644 org.flatpak.Hello.desktop -t /app/share/applications
 
-      # 从本地文件进行 copy
+      # 解压运行环境文件
+      - ls -al
       - mkdir -p /app/eda
-      - cp -a ./eda/* /app/eda
+      - unzip ./eda.zip -d /app/eda/
+      - rm ./eda.zip
 
       # 解压文件
       - mkdir -p /app/eda/resources/app
       - tar -zxvf ./pro-editor-client.tgz -C /app/eda/resources/app
       - rm ./pro-editor-client.tgz
-
 
     sources:
       - type: script
@@ -29,13 +30,14 @@ modules:
       
       # 从远端配置下载文件
       - type: file
+        url: https://registry.npmmirror.com/-/binary/electron/33.2.1/electron-v33.2.1-linux-x64.zip
+        sha256: 3b66a507ece29684a105b0f9609db50c88235333ddad696d01eefebefd4b1aab
+        dest-filename: eda.zip
+
+      - type: file
         url: https://modules.lceda.cn/client/2.2.51.1.6934e56d.a2293c/pro-editor-client-2.2.51.1.6934e56d.a2293c.tgz
         sha256: 1a1671f80743bd4cb617f7c184db5c737eaa74112f3af5eb1f386c4ae1764705
         dest-filename: pro-editor-client.tgz
-
-      - type: dir
-        path: ./eda
-        dest: eda
 
       - type: file
         path: org.flatpak.Hello.png
